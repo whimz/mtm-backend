@@ -71,10 +71,10 @@ const handleCallback = async (req, res) => {
     }
 
     // Redirect to frontend success page
-    res.redirect('http://localhost:5173/settings?connected=true');
+    res.redirect(`${process.env.FRONTEND_URL}/settings?connected=true`);
   } catch (error) {
     console.error('OAuth callback error:', error);
-    res.redirect('http://localhost:5173/settings?connected=failed');
+    res.redirect(`${process.env.FRONTEND_URL}/settings?connected=failed`);
   }
 };
 
