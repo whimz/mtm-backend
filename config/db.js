@@ -99,7 +99,7 @@ class DB {
 }
 
 // Ensure data directory exists
-const dbPath = path.resolve(__dirname, "../app.db");
+const dbPath = process.env.DB_PATH || path.resolve(__dirname, "../app.db");
 
 // Create empty DB file if not exists
 if (!fs.existsSync(dbPath)) {
