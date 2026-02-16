@@ -101,6 +101,11 @@ class DB {
 // Ensure data directory exists
 const dbPath = process.env.DB_PATH || path.resolve(__dirname, "../app.db");
 
+const dbDir = path.dirname(dbPath);
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir, { recursive: true });
+}
+
 // Create empty DB file if not exists
 if (!fs.existsSync(dbPath)) {
   fs.closeSync(fs.openSync(dbPath, "w"));
