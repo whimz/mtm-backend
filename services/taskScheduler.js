@@ -92,6 +92,10 @@ async function executeTask(task) {
 
   const formSubmittedAt = new Date().toISOString();
 
+  console.log('[debug] About to call submitFormWithPuppeteer');
+  console.log('[debug] URL:', url);
+  console.log('[debug] Inputs:', JSON.stringify(inputs));
+
   try {
     const parsedInputs = JSON.parse(task.inputs);
     await submitFormWithPuppeteer(task.url, parsedInputs);
@@ -112,6 +116,8 @@ async function executeTask(task) {
         });
       }
     }
+
+    console.log('[debug] submitFormWithPuppeteer completed');
 
   } catch (error) {
     console.error(`❌ Error in task "${task.title}":`, error.message);
