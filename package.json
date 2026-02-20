@@ -21,6 +21,8 @@
     "express": "^4.21.2",
     "googleapis": "^170.1.0",
     "puppeteer": "^24.9.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "sqlite3": "^5.1.7",
     "yup": "^1.6.1"
   }
